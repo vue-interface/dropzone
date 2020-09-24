@@ -6,16 +6,14 @@
         @dragover.prevent="onDragover"
         @dragenter.prevent="onDragenter"
         @dragleave.prevent="onDragleave">
-        <div class="dropzone-placeholder">
-            <div class="dropzone-placeholder-content">
-                <slot name="placeholder">
-                    <h2>Drag & Drop</h2>
-                    <p class="dropzone-text">
-                        Drag and drop your files here to upload them!
-                    </p>
-                </slot>
+        <slot name="placeholder">
+            <div class="dropzone-placeholder text-center">
+                <h2>Drag & Drop</h2>
+                <p class="dropzone-text">
+                    Drag and drop your files here to upload them!
+                </p>
             </div>
-        </div>
+        </slot>
         <slot />
     </div>
 </template>
@@ -65,8 +63,8 @@ export default {
     position: relative;
 }
 
-.dropzone:not(.is-dragging) .dropzone-placeholder {
-    display: none;
+.dropzone.is-dragging .dropzone-placeholder {
+    display: block;
 }
 
 .dropzone .dropzone-text {
@@ -74,27 +72,14 @@ export default {
 }
 
 .dropzone .dropzone-placeholder {
+    display: none;
     position: absolute;
-    display: flex;
     top: 0;
     left: 0;
     z-index: 2;
     width: 100%;
     height: 100%;
     background: white;
-    border-radius: .25rem;
     pointer-events: none;
-    border: 1px solid #ced4da;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-
-.dropzone .dropzone-placeholder-content {
-    width: 100%;
-}
-
-.dropzone .dropzone-placeholder > div {
-    width: 100%;
 }
 </style>
