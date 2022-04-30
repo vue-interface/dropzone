@@ -4,31 +4,47 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>Dropzone</title>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="./dist/Dropzone.css">
     </head>
     <body>
-        <form id="app" class="container">
-            <h1 class="mb-4">dropzone</h1>
+        <form id="app" class="container mx-auto mb-6">
+            <h1 class="text-4xl mb-6">dropzone</h1>            
 
-            
-
-            <dropzone @drop="onDrop">
-                <textarea rows="8" class="form-control">Drag and drop files over this textarea...</textarea>
+            <dropzone
+                @dragover="onDragover"
+                @dragenter="onDragenter"
+                @dragleave="onDragleave"
+                @drop="onDrop">
+                <textarea rows="8" class="w-full p-3 rounded border border-gray-500/50 focus:ring outline-none">
+                    Drag and drop files over this textarea...
+                </textarea>
             </dropzone>
         </form>
 
-        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.js"></script>
-        <script type="text/javascript" src="./dist/Dropzone.umd.js"></script>
-        <script type="text/javascript">
+        <script type="module">
+            import './index.css';
+            import Vue from 'vue/dist/vue';
+            import { Dropzone } from './index.js';
+            
+            Vue.config.devtools = false;
+            Vue.config.productionTip = false;
+
             const vue = new Vue({
                 el: '#app',
                 components: {
                     Dropzone
                 },
                 methods: {
+                    onDragover(e) {
+                        console.log('onDragover', e);
+                    },
+                    onDragenter(e) {
+                        console.log('onDragenter', e);
+                    },
+                    onDragleave(e) {
+                        console.log('onDragleave', e);
+                    },
                     onDrop(e) {
-                        console.log(e);
+                        console.log('onDrop', e);
                     }
                 }
             });

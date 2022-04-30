@@ -1,2 +1,5 @@
-import Dropzone from './src/Dropzone';
-export default Dropzone;
+import Dropzone from './src/Dropzone.vue';
+
+export {
+    Dropzone
+};
