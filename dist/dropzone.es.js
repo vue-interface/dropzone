@@ -22,7 +22,7 @@ var render = function() {
         return [_vm._m(0)];
       }, { "isDragging": _vm.isDragging })], 2)];
     }, { "isDragging": _vm.isDragging })], 2)];
-  }, { "isDragging": _vm.isDragging }), _vm._t("default")], 2);
+  }, { "isDragging": _vm.isDragging }), _c("div", [_vm._t("default")], 2)], 2);
 };
 var staticRenderFns = [function() {
   var _vm = this;

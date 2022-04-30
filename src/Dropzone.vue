@@ -44,7 +44,9 @@
                 </slot>
             </div>
         </slot>
-        <slot />
+        <div>
+            <slot />
+        </div>
     </div>
 </template>
 
