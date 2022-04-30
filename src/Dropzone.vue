@@ -2,10 +2,10 @@
     <div
         class="dropzone"
         :class="{'is-dragging': isDragging}"
-        @drop.prevent="onDrop"
-        @dragover.prevent="onDragover"
-        @dragenter.prevent="onDragenter"
-        @dragleave.prevent="onDragleave">
+        @drop="onDrop"
+        @dragover="onDragover"
+        @dragenter="onDragenter"
+        @dragleave="onDragleave">
         <slot name="placeholder" :is-dragging="isDragging">
             <div class="dropzone-placeholder text-center">
                 <slot name="content" :is-dragging="isDragging">

@@ -2,19 +2,7 @@ var render = function() {
   var _vm = this;
   var _h = _vm.$createElement;
   var _c = _vm._self._c || _h;
-  return _c("div", { staticClass: "dropzone", class: { "is-dragging": _vm.isDragging }, on: { "drop": function($event) {
-    $event.preventDefault();
-    return _vm.onDrop.apply(null, arguments);
-  }, "dragover": function($event) {
-    $event.preventDefault();
-    return _vm.onDragover.apply(null, arguments);
-  }, "dragenter": function($event) {
-    $event.preventDefault();
-    return _vm.onDragenter.apply(null, arguments);
-  }, "dragleave": function($event) {
-    $event.preventDefault();
-    return _vm.onDragleave.apply(null, arguments);
-  } } }, [_vm._t("placeholder", function() {
+  return _c("div", { staticClass: "dropzone", class: { "is-dragging": _vm.isDragging }, on: { "drop": _vm.onDrop, "dragover": _vm.onDragover, "dragenter": _vm.onDragenter, "dragleave": _vm.onDragleave } }, [_vm._t("placeholder", function() {
     return [_c("div", { staticClass: "dropzone-placeholder text-center" }, [_vm._t("content", function() {
       return [_c("div", { staticClass: "dropzone-placeholder-content" }, [_vm._t("icon", function() {
         return [_vm.icon ? _c("svg", { staticClass: "dropzone-placeholder-icon", attrs: { "fill": "none", "height": "56", "stroke": "currentColor", "stroke-linecap": "round", "stroke-linejoin": "round", "stroke-width": "2", "viewBox": "0 0 24 24", "width": "56", "xmlns": "http://www.w3.org/2000/svg" } }, [_c("path", { attrs: { "d": "M0 0h24v24H0z", "fill": "none", "stroke": "none" } }), _c("rect", { attrs: { "height": "12", "rx": "2", "width": "12", "x": "8", "y": "8" } }), _c("line", { attrs: { "x1": "4", "x2": "4", "y1": "4", "y2": "4.01" } }), _c("line", { attrs: { "x1": "8", "x2": "8", "y1": "4", "y2": "4.01" } }), _c("line", { attrs: { "x1": "12", "x2": "12", "y1": "4", "y2": "4.01" } }), _c("line", { attrs: { "x1": "16", "x2": "16", "y1": "4", "y2": "4.01" } }), _c("line", { attrs: { "x1": "4", "x2": "4", "y1": "8", "y2": "8.01" } }), _c("line", { attrs: { "x1": "4", "x2": "4", "y1": "12", "y2": "12.01" } }), _c("line", { attrs: { "x1": "4", "x2": "4", "y1": "16", "y2": "16.01" } })]) : _vm._e()];
